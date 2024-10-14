@@ -2,7 +2,7 @@ import numpy as np
 import imageio
 from skimage.transform import resize
 from scipy.ndimage import gaussian_filter
-
+#import matplotlib.pyplot as plt
 
 def mssim(
     x: np.ndarray,
@@ -114,6 +114,12 @@ def interpolation_error():
         print(mssim(x, rescaled))
         print(psnr(x, rescaled))
         print(psnr_for(x, rescaled))
+
+    #_, ax = plt.subplots(1, 3, figsize=(9, 3))
+    #ax[0].imshow(nearest, cmap='gray')
+    #ax[1].imshow(linear, cmap='gray')
+    #ax[2].imshow(cubic, cmap='gray')
+    #plt.show()
 
 
 if __name__ == '__main__':
